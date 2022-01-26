@@ -3,3 +3,4 @@ numpy
 streamlit
 requests
 folium
+streamlit_folium
