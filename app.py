@@ -6,7 +6,7 @@ import folium
 
 df = pd.read_csv("data.csv")
 
-paris = folium.Map(location = [48.856578, 2.351828], tiles = "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png", attr= 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', zoom_start = 12)
+paris = folium.Map(location = [48.862578, 2.339828], width=500,height=500, tiles = "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png", attr= 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', zoom_start = 12)
 
 type_dict = {'SANISETTE':"lightgray", 'TOILETTES':"darkpurple", 'WC PUBLICS PERMANENTS':"lightblue", 'URINOIR':"darkblue", 'LAVATORY':"cadetblue", 'URINOIR FEMME':"blue"}
 
@@ -28,12 +28,12 @@ type_dict = {'SANISETTE':"lightgray", 'TOILETTES':"darkpurple", 'WC PUBLICS PERM
 
 st.title("Une envie pressante ? :toilet:")
 
-choice = st.sidebar.radio("", options=["Toutes les sanisettes", "Plus d'options"])
+choice = st.radio("", options=["Toutes les sanisettes", "Plus d'options"])
 
 if choice == "Plus d'options":
-    pmr = st.sidebar.radio("Accès PMR", options=["Oui", "Non"])
+    pmr = st.radio("Accès PMR", options=["Oui", "Non"])
     print(pmr)
-    baby = st.sidebar.radio("Relais Bébé", options=["Oui", "Non"])
+    baby = st.radio("Relais Bébé", options=["Oui", "Non"])
 
     if pmr == "Oui" and baby == "Non":
         df_map = df[(df.RELAIS_BEBE == "Non") & (df.ACCES_PMR == "Oui")].reset_index()
