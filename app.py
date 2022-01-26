@@ -8,7 +8,7 @@ df = pd.read_csv("data.csv")
 
 paris = folium.Map(location = [48.862578, 2.339828], width=500,height=500, tiles = "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png", attr= 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', zoom_start = 12)
 
-type_dict = {'SANISETTE':"lightgray", 'TOILETTES':"darkpurple", 'WC PUBLICS PERMANENTS':"lightblue", 'URINOIR':"darkblue", 'LAVATORY':"cadetblue", 'URINOIR FEMME':"blue"}
+type_dict = {'SANISETTE':"darkred", 'TOILETTES':"darkpurple", 'WC PUBLICS PERMANENTS':"lightblue", 'URINOIR':"darkblue", 'LAVATORY':"cadetblue", 'URINOIR FEMME':"blue"}
 
 # for i in range(df.shape[0]):
 #     html=f"""
